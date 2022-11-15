@@ -3,7 +3,6 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-
 import sys
 import dateutil.parser
 import babel
@@ -16,6 +15,7 @@ from logging import Formatter, FileHandler
 from flask_wtf import Form
 from forms import *
 from models import db, Venue, Show, Artist
+
 
 #----------------------------------------------------------------------------#
 # App Config.
@@ -115,12 +115,44 @@ def create_venue_submission():
   
   return render_template('pages/home.html')
 
-
+# @app.route('/account/login', methods=['GET'])
+# def create_account():
+#   form = LoginForm()
+#   return render_template('forms/login.html', form=form)
 
 @app.route('/artists/create', methods=['GET'])
 def create_artist_form():
   form = ArtistForm()
   return render_template('forms/new_artist.html', form=form)
+
+# @app.route('/account/login', methods=['POST'])
+# def create_account_submission():
+#   form = LoginForm(request.form)
+#   error = False
+#   # if error == True:
+#   #   flash(f'Wrong Details')
+#   # else:
+#   #   flash(f'Logged In Success')
+#   try:
+#     email = form.email.data
+#     password = form.password.data
+    
+  #   userQuery = Login.query.get(email)
+  #   if email in userQuery:
+  #     flash(f'Account already exist')
+  #     return render_template('pages/home.html')
+  #   else:
+  #     create_user = Login(email=email, password=password)
+  #     db.session.add(create_user)
+  #     db.session.commit()
+  #     return render_template('pages/home.html')
+  # except:
+  #   error = True
+  #   db.session.rollback()
+  #   print(sys.exc_info())
+  # finally:
+  #   db.session.close()
+  # return render_template('pages/home.html')
 
 @app.route('/artists/create', methods=['POST'])
 def create_artist_submission():
@@ -682,3 +714,5 @@ if __name__ == '__main__':
     app.debug = True
     app.run(host='127.0.0.1', port=5000)
 
+
+# https://fullstackdevelopment.us.auth0.com/authorize?audience=login&response_type=token&client_id=502VNO6RYrsnl4LNu8GW5KfKI2NqE7Zj&redirect_uri=http://127.0.0.1:5000/artists

@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, SelectMultipleField, DateTimeField, BooleanField
-from wtforms.validators import DataRequired, AnyOf, URL
+from wtforms import StringField, SelectField, SelectMultipleField, DateTimeField, BooleanField, PasswordField
+from wtforms.validators import DataRequired, URL
 
 class ShowForm(FlaskForm):
     artist_id = StringField(
@@ -15,6 +15,10 @@ class ShowForm(FlaskForm):
         validators=[DataRequired()],
         default= datetime.today()
     )
+    
+# class LoginForm(FlaskForm):
+#     email = StringField('email', validators=[DataRequired()])
+#     password = PasswordField('password', validators=[DataRequired()])
 
 class VenueForm(FlaskForm):
     name = StringField(

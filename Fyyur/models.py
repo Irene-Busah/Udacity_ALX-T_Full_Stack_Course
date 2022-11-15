@@ -49,3 +49,13 @@ class Show(db.Model):
   def __repr__(self):
 	   return f'<Show {self.artist_id}{self.venue_id}>'
 
+
+# class Login(db.Model):
+#   __tablename__ = 'login'
+#   id = db.Column(db.Integer, primary_key=True)
+#   email = db.Column(db.String, nullable=False)
+#   password = db.Column(db.String, nullable=False)
+
+#   def __repr__(self):
+# 	   return f'<User {self.email}>'
+

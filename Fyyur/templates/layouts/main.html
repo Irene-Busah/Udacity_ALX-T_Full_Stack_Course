@@ -56,7 +56,7 @@
             <li>
               {% if (request.endpoint == 'venues') or
                 (request.endpoint == 'search_venues') or
-                (request.endpoint == 'show_venue') %}
+                (request.endpoint == 'show_venue')  %}
               <form class="search" method="post" action="/venues/search">
                 <input class="form-control"
                   type="search"
@@ -82,7 +82,11 @@
             <li {% if request.endpoint == 'venues' %} class="active" {% endif %}><a href="{{ url_for('venues') }}">Venues</a></li>
             <li {% if request.endpoint == 'artists' %} class="active" {% endif %}><a href="{{ url_for('artists') }}">Artists</a></li>
             <li {% if request.endpoint == 'shows' %} class="active" {% endif %}><a href="{{ url_for('shows') }}">Shows</a></li>
-          </ul>
+            <!-- <li {% if request.endpoint == 'create_account' %} class="active" {% endif %}><a href="https://fullstackdevelopment.us.auth0.com/authorize?audience=login&response_type=token&client_id=502VNO6RYrsnl4LNu8GW5KfKI2NqE7Zj&redirect_uri=http://127.0.0.1:5000/artists">Login</a></li>
+          </ul> -->
+          <!-- <ul class="nav navbar-nav">
+            
+          </ul> -->
         </div><!--/.nav-collapse -->
       </div>
     </div>
