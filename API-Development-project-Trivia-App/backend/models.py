@@ -23,7 +23,7 @@ def setup_db(app, database_path=database_path):
 Question Model
 
 """
-class Question(db.Model):
+class Question(db.Model):  # type: ignore
     __tablename__ = 'questions'
 
     id = Column(Integer, primary_key=True)
@@ -61,7 +61,7 @@ class Question(db.Model):
 """
 Category Model
 """
-class Category(db.Model):
+class Category(db.Model):  # type: ignore
     __tablename__ = 'categories'
 
     id = Column(Integer, primary_key=True)

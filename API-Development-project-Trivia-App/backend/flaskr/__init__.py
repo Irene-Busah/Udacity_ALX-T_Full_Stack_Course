@@ -1,5 +1,4 @@
 from crypt import methods
-from operator import le
 import os
 from flask import Flask, request, abort, jsonify, flash
 from flask_sqlalchemy import SQLAlchemy

@@ -47,7 +47,7 @@ def format_datetime(value, format='medium'):
       format="EEEE MMMM, d, y 'at' h:mma"
   elif format == 'medium':
       format="EE MM, dd, y h:mma"
-  return babel.dates.format_datetime(date, format, locale='en')
+  return babel.dates.format_datetime(date, format, locale='en')  # type: ignore
 
 app.jinja_env.filters['datetime'] = format_datetime
 
@@ -387,7 +387,7 @@ def search_venues():
 
   # Enables the user to search for a specific venue, even with part of venue name
 
-  searchResults = Venue.query.filter(Venue.name.ilike('%' + request.form.get('search_term') + '%')).all()
+  searchResults = Venue.query.filter(Venue.name.ilike('%' + request.form.get('search_term') + '%')).all()  # type: ignore
   data_result = []
   index = 0
 
@@ -413,7 +413,7 @@ def search_artists():
   
   # Enables the user to search for a specific artist, even with part of artist name
 
-  searchResults = Artist.query.filter(Artist.name.ilike('%' + request.form.get('search_term') + '%')).all()
+  searchResults = Artist.query.filter(Artist.name.ilike('%' + request.form.get('search_term') + '%')).all()  # type: ignore
   data_results = []
   index = 0
   

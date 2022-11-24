@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
-class Venue(db.Model):
+class Venue(db.Model):  
     __tablename__ = 'venue'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -21,7 +21,7 @@ class Venue(db.Model):
     def __repr__(self):
         return f'Venue {self.name}'
 
-class Artist(db.Model):
+class Artist(db.Model): 
   __tablename__ = 'artist'
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String())
@@ -40,7 +40,7 @@ class Artist(db.Model):
      return f'Artist {self.name}'
 
 
-class Show(db.Model):
+class Show(db.Model):  
   id = db.Column(db.Integer, primary_key=True)
   artist_id = db.Column(db.Integer, db.ForeignKey('artist.id'), nullable=False)
   venue_id = db.Column(db.Integer, db.ForeignKey('venue.id'), nullable=False)
@@ -53,7 +53,7 @@ class Show(db.Model):
 # class Login(db.Model):
 #   __tablename__ = 'login'
 #   id = db.Column(db.Integer, primary_key=True)
-#   email = db.Column(db.String, nullable=False)
+#   email = db.Column(db.String, nullasble=False)
 #   password = db.Column(db.String, nullable=False)
 
 #   def __repr__(self):
